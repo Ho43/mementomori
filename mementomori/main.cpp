@@ -2,6 +2,7 @@
 #include "Enum.h"
 #include "Equipment.h"
 #include "Character.h"
+#include "Screen.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	LPSTR lpCmdLine, int nCmdShow)
@@ -15,33 +16,22 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		return -1;
 	}
 
-	const int cordieID = (int)CHARACTER_ID::CORDIE;
-	const int florenceID = (int)CHARACTER_ID::FLORENCE;
-	const int characterMaxID = (int)CHARACTER_ID::CHARACTER_MAX;
 
-
-	Item items[Equipment::equipMaxID]
+	Character character[(int)CHARACTER_ID::CHARACTER_MAX] =
 	{
-		{swordID	,"サタンの覇王剣","SSR"},
-		{bookID		,"サタンの神滅書","SSR"},
-		{gunID		,"サタンの魔召銃","SSR"},
-		{hatID		,"サタンの夜会帽","SSR"},
-		{dressID	,"サタンのドレス","SSR"},
-		{armID		,"サタンの夜華"  ,"SSR"},
-		{shoesID	,"サタンの宝靴"  ,"SSR"},
-		{necklesID	,"サタンの瞳晶"  ,"SSR"}
-	};
-
-	Character character[characterMaxID] =
-	{
-		{cordieID,(int)ATTRIBUTE_ID::GREEN,240},
+		{(int)CHARACTER_ID::CORDIE,(int)ATTRIBUTE_ID::GREEN,240},
 		{(int)CHARACTER_ID::FLORENCE,(int)ATTRIBUTE_ID::BLUE,240}
 	};
-	for (int i = 0; i < (int)EquipName::EQUIP_NAME_MAX; ++i)
-		// character[cordieID].eq.AddItem(items[i]);
-		// character[GetID(EquipName::SWORD)].eq.AddItem(items[i]);
-		character[Equipment::swordID].eq.AddItem(items[i]);
 
+
+	character[(int)CHARACTER_ID::FLORENCE].eq.Equip(masterItem[(int)EquipName_ID::ASTAROTH_ARM]);
+	character[(int)CHARACTER_ID::FLORENCE].eq.Equip(masterItem[(int)EquipName_ID::SATAN_ARM]);
+
+	int x = 0;
+	int y = 0;
+
+	// スクリーンクラス
+	Screen screen;
 
 	// ----------------------------------------------------------------------------
 	// メインループ
@@ -50,7 +40,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		// 画面のクリア
 		ClearDrawScreen();
 
-		character[cordieID].DrawCharacterData((int)CHARACTER_ID::CORDIE, 10, 10);
+		character[(int)CHARACTER_ID::FLORENCE].DrawCharacterData((int)CHARACTER_ID::CORDIE, 10, 10);
+
+
+
+		character[(int)CHARACTER_ID::FLORENCE].eq.DrawData(character[(int)CHARACTER_ID::FLORENCE].eq.GetSlotID((int)EquipSlot_ID::ARM),100,100);
+
+
+		GetMousePoint(&x, &y);
+
+		DrawFormatString(500, 200, GetColor(244, 244, 244), "x = %d, y = %d", x, y);
+
+		screen.DrawMenu();
 
 		// 画面を更新する
 		ScreenFlip();

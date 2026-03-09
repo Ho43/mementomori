@@ -88,41 +88,42 @@ enum class POTENTIAL_ID
 	POTENTIAL_MAX
 };
 
-// 武具レアリティ識別
-enum class EquipRarity_ID
-{
-	R,				// 0 R
-	SR,				// 1 SR
-	SSR,			// 2 SSR
-	UR,				// 3 UR
-	LR,				// 4 LR
-	DEDICATED,		// 5 専用武器
-	EQUIP_RARITY_MAX
-};
+//// 武具レアリティ識別
+//enum class EquipRarity_ID
+//{
+//	R,				// 0 R
+//	SR,				// 1 SR
+//	SSR,			// 2 SSR
+//	UR,				// 3 UR
+//	LR,				// 4 LR
+//	DEDICATED,		// 5 専用武器
+//	EQUIP_RARITY_MAX
+//};
+//
+//// 武具シリーズ識別
+//enum class EquipSeries_ID
+//{
+//	NAHEMA,      // 0	ナヘマー
+//	LILITH,      // 1	リリス
+//	ADRAMALECH,  // 2	アドラメレク
+//	BAAL,        // 3	バアル	
+//
+//	SANDALPHON,  // 4	サンダルフォン
+//	GABRIEL,     // 5	ガブリエル
+//	RAPHAEL,     // 6	ラファエル	
+//	HANIEL,      // 7	ハニエル
+//
+//	ASTAROTH,    // 8	アスタロト
+//	LUCIFUGE,    // 9	ルキフグス
+//	BEELZEBUB,   // 10	ベルゼブブ
+//	SATAN,       // 11	サタン
+//
+//	MICHAEL,     // 12	ミカエル
+//	METATRON,    // 13	メタトロン
+//	EQUIP_SERIES_MAX
+//};
 
-// 武具シリーズ識別
-enum class EquipSeries_ID
-{
-	NAHEMA,      // 0	ナヘマー
-	LILITH,      // 1	リリス
-	ADRAMALECH,  // 2	アドラメレク
-	BAAL,        // 3	バアル	
-
-	SANDALPHON,  // 4	サンダルフォン
-	GABRIEL,     // 5	ガブリエル
-	RAPHAEL,     // 6	ラファエル	
-	HANIEL,      // 7	ハニエル
-
-	ASTAROTH,    // 8	アスタロト
-	LUCIFUGE,    // 9	ルキフグス
-	BEELZEBUB,   // 10	ベルゼブブ
-	SATAN,       // 11	サタン
-
-	MICHAEL,     // 12	ミカエル
-	METATRON,    // 13	メタトロン
-	EQUIP_SERIES_MAX
-};
-
+// 装備スロット識別
 enum class EquipSlot_ID
 {
 	WEAPON,		// 0
@@ -157,18 +158,48 @@ enum class EquipPotential_ID
 
 
 // test中。装備識別
-enum class EquipName
+enum class EquipName_ID
 {
-	SWORD,			// 0
-	BOOK,			// 1
-	GUN,			// 2
-	HAT,			// 3
-	DRESS,			// 4
-	ARM,			// 5
-	SHOES,			// 6
-	NECKLES,		// 7
+	SATAN_SWORD,		// 0
+	SATAN_BOOK,			// 1
+	SATAN_GUN,			// 2
+	SATAN_HAT,			// 3
+	SATAN_DRESS,		// 4
+	SATAN_ARM,			// 5
+	SATAN_SHOES,		// 6
+	SATAN_NECKLES,		// 7
+
+	BEELZEBUB_SWORD,	// 8
+	BEELZEBUB_BOOK,		// 9
+	BEELZEBUB_GUN,		// 10
+	BEELZEBUB_HAT,		// 11
+	BEELZEBUB_DRESS,	// 12
+	BEELZEBUB_ARM,		// 13
+	BEELZEBUB_SHOES,	// 14
+	BEELZEBUB_NECKLES,	// 15
+
+	LUCIFUGES_SWORD,	// 16
+	LUCIFUGES_BOOK,		// 17
+	LUCIFUGES_GUN,		// 18
+	LUCIFUGES_HAT,		// 19
+	LUCIFUGES_DRESS,	// 20
+	LUCIFUGES_ARM,		// 21
+	LUCIFUGES_SHOES,	// 22
+	LUCIFUGES_NECKLES,	// 23
+
+	ASTAROTH_SWORD,		// 24
+	ASTAROTH_BOOK,		// 25
+	ASTAROTH_GUN,		// 26
+	ASTAROTH_HAT,		// 27
+	ASTAROTH_DRESS,		// 28
+	ASTAROTH_ARM,		// 29
+	ASTAROTH_SHOES,		// 30
+	ASTAROTH_NECKLES,	// 31
+
+	
 	EQUIP_NAME_MAX
 };
+
 
 
 

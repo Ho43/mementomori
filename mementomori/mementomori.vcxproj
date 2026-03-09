@@ -133,6 +133,7 @@
     <ClCompile Include="Equipment.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Potential.cpp" />
+    <ClCompile Include="Screen.cpp" />
     <ClCompile Include="Status.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +141,7 @@
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Equipment.h" />
     <ClInclude Include="Potential.h" />
+    <ClInclude Include="Screen.h" />
     <ClInclude Include="Status.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
