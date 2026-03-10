@@ -1,13 +1,12 @@
 #pragma once
 
-// DrawBoxの座標入れるところ
-struct BoxPosition
-{
-	int x1;	// X軸の始点
-	int x2;	// X軸の終点
-	int y1;	// Y軸の始点
-	int y2;	// Y軸の終点
-};
+#include <string>
+#include "MouseUIInputManager.h"
+
+#define MAX_MENU (5)		// メニューの数
+#define WINDOW_WIDTH  (640)	// ウィンドウの幅
+#define WINDOW_HEIGHT (480)	// ウィンドウの高さ
+
 
 // GetColorの色を入れるところ
 struct Color
@@ -17,20 +16,29 @@ struct Color
 	int B;	// 青
 };
 
+
+
 class Screen
 {
+	// アイコンの表記名を入れるところ
+	std::string iconTexts[MAX_MENU];
 public:
-
-	// カーソルがアイコンに重なっているかを確認する
-	bool CheckCursor(BoxPosition box);
+	MouseUIInputManager mouseInput;
 
 	// アイコンを強調する
 	void Highlight(Color *color);
 
+	// アイコンテキストの初期化
+	void InitMenuIconText();
+
+	// テキストを中央ぞろえにする
+	int TextCenter(std::string text);
+
 	// メニューを描画
 	void DrawMenu();
 
-	void DrawScreen();
+
+	void DrawScreen(int index);
 
 };
 

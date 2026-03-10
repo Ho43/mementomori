@@ -20,16 +20,13 @@ enum class ATTRIBUTE_ID
 };
 
 // ÉyÅ[ÉWñºóÒãìå^
-enum class PEGE_ID
+enum class Page_ID
 {
 	MYPAGE,
 	CHARA,
-	BOX,
+	EQUIP,
 	QUEST,
-	CHALLENGE,
-	GTYA,
-	CHAT,
-	GUILD,
+	GATYA,
 
 	BATTLE_WINDOW,
 	BATTLE,

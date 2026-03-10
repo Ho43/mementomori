@@ -3,6 +3,7 @@
 #include "Equipment.h"
 #include "Character.h"
 #include "Screen.h"
+#include "time.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	LPSTR lpCmdLine, int nCmdShow)
@@ -32,7 +33,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	// スクリーンクラス
 	Screen screen;
-
 	// ----------------------------------------------------------------------------
 	// メインループ
 	while (CheckHitKey(KEY_INPUT_ESCAPE) == 0)
@@ -50,6 +50,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		GetMousePoint(&x, &y);
 
 		DrawFormatString(500, 200, GetColor(244, 244, 244), "x = %d, y = %d", x, y);
+		DrawFormatString(500, 150, GetColor(244, 244, 244), "page = %d",(int)screen.mouseInput.page.GetPage());
 
 		screen.DrawMenu();
 
